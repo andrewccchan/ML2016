@@ -3,9 +3,8 @@ import numpy as np
 def getTrainValidSets(data, portion) :
     dataNum = data.shape[0]
     bound = np.asscalar(np.floor(dataNum/portion))
-    print(dataNum)
-    train = data[0:bound, :]
-    valid = data[bound+1:, :]
+    train = data[0:int(bound), :]
+    valid = data[int(bound)+1:, :]
     # print(train)
     return (train, valid)
 

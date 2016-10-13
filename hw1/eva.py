@@ -2,7 +2,7 @@ import csv
 import numpy as np
 from util import normalize
 
-def evaluate(fileName, beta, factors, trainLen) :
+def evaluate(fileName, beta, factors, trainLen, outFile) :
     zeroIdx = 2
     # trainLen = 9
     # factors = ['PM2.5', 'AMB_TEMP', 'PM10', 'O3', 'SO2']
@@ -58,12 +58,12 @@ def evaluate(fileName, beta, factors, trainLen) :
     # normalize testData
     gndHat = np.dot(testData, beta)
 
-    submit = open('submit.csv', 'w')
+    submit = open(outFile+'.csv', 'w')
     header = ['id', 'value']
     submit.write(','.join(header) + '\n')
 
     for ct1 in range(gndHat.shape[0]) :
-        data = float(np.asscalar(gndHat[ct1]))
+        data = int(np.asscalar(gndHat[ct1]))
         # if data < 0 :
         #     data = 0
         cont = ['id_' + str(ct1), str(data)]

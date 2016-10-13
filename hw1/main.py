@@ -1,9 +1,11 @@
+#!/usr/bin/env python3
 from train import train_linear
 
 from parseData import parseData, parseData_sliding
 from eva import evaluate
 from util import getTrainValidSets, normalize
 import numpy as np
+import sys
 
 [history, target, factors, trainLen] = parseData_sliding('./data/train.csv')
 
@@ -21,4 +23,4 @@ gndData = target
 
 beta = train_linear(trainData, gndData, testTrain, testGnd, 5e-9, 1e-10, 1e-6, 500000, 0)
 print(factors)
-evaluate('./data/test_X.csv', beta, factors, trainLen)
+evaluate('./data/test_X.csv', beta, factors, trainLen, sys.argv[1])
