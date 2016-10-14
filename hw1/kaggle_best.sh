@@ -1,2 +1,2 @@
 #!/bin/bash
-./main.py kaggle_best
+python3 main.py kaggle_best

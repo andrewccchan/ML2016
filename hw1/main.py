@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from train import train_linear
 
 from parseData import parseData, parseData_sliding
