@@ -14,7 +14,8 @@ drop = 0.5 # Dropout
 # Training
 batch_size = 32 # default value
 nb_classes = 10
-nb_epoch = 1
+basic_nb_epoch = 20
+self_nb_epoch = 10
 data_aug = 0
 tvRatio = 0.1 # training and validation set ratio
 # SGD parameters
@@ -23,3 +24,7 @@ sgd_decay = 1.e-6
 sgd_mom = 0.9
 # Testing
 test_n_img = 10000
+# Self-training
+self_max_iter = 15
+prob_thresh = 0.98
+transductive = 0
