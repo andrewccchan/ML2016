@@ -1,0 +1,30 @@
+# load_al
+al_n_class = 10 # 0 - 9
+al_n_img_class = 500 # 0 - 499
+imgSize = 32
+imgChan = 3 # number of channels for each image
+totalSize = 3072 # 1024*3
+# load_au
+au_n_img = 45000 # 0 - 44999
+# buildCNN
+filterM = 3 # Size of convolution filter
+filterN = 3
+filterNum = 32 # Number of filter
+drop = 0.5 # Dropout
+# Training
+batch_size = 32 # default value
+nb_classes = 10
+basic_nb_epoch = 2
+self_nb_epoch = 2
+data_aug = 0
+tvRatio = 0.1 # training and validation set ratio
+# SGD parameters
+sgd_lr = 0.01
+sgd_decay = 1.e-6
+sgd_mom = 0.9
+# Testing
+test_n_img = 10000
+# Self-training
+self_max_iter = 1
+prob_thresh = 0.1
+transductive = 0
