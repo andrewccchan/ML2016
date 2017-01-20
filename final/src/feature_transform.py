@@ -18,7 +18,7 @@ for idx in discrete_index:
 if test:
     discrete_test = []
     new_test = []
-    f_test = [line.strip().split(',') for line in open('test.in')]
+    f_test = [line.strip().split(',') for line in open('data/test.in')]
     for idx in discrete_index:
         discrete_test.append([line[idx] for line in f_test])
 
@@ -33,17 +33,17 @@ for i, idx in enumerate(discrete_index):
         new_test.append(lb.transform(discrete_test[i]))
         print(idx, np.unique(discrete_test[i], return_counts=True))
 
-"""
+
 for i, idx in enumerate(discrete_index):
-    if not test:     for j in range(len(features)):
+    if not test:     #for j in range(len(features)):
         for j in range(len(features)):
             features[j][idx] = ','.join([str(n) for n in new_features[i][j]])
-    
+
     if test:
         for j in range(len(f_test)):
             f_test[j][idx] = ','.join([str(n) for n in new_test[i][j]])
 
-if not test:        
+if not test:
     with open(f+'.bin', 'a') as fw:
         for feature in features:
             fw.write(','.join(feature) + '\n')
@@ -52,4 +52,3 @@ if test:
     with open('test.bin', 'a') as fw:
         for feature in f_test:
             fw.write(','.join(feature) + '\n')
-"""

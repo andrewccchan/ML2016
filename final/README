@@ -1,0 +1,11 @@
+Training:
+1. cd to final. Assume training file is "train", testing file is "test.in"
+2. python src/feature_transform.py data/train
+3. python src/feature_transform.py data/test.in test.in
+4. mv ./test.in ./data
+5. python src/feature_type_numerate.py data/train.in train.in.label
+6. python src/scikit-test.py
+
+Test:
+1. find the find ending with pkl, which is the model file
+1. python src/scikit-test.py --test --model model_file 
